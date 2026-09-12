@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>iPhone 18 Duo — Apple</title>
+  <meta name="description" content="Two screens. Zero compromise. Folded in liquid titanium. Introducing the iPhone 18 Duo powered by A20 Pro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Global Apple Header -->
+  <header class="apple-header">
+    <div class="apple-header__inner">
+      <a href="#landing-hero" class="apple-header__brand" aria-label="Apple">
+        <svg class="apple-header__logo" viewBox="0 0 170 170">
+          <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.58-7.7-11.64-13.99-6.3-9.77-11.28-20.91-14.94-33.41-3.66-12.5-5.5-24.32-5.5-35.47 0-14.15 3.49-26.05 10.46-35.7 6.98-9.66 15.82-14.56 26.54-14.7 4.58 0 9.87 1.25 15.87 3.76 6 2.5 10.12 3.81 12.35 3.92 1.9-.11 6.13-1.47 12.69-4.08 6.56-2.61 12.08-3.78 16.56-3.52 12.63.65 22.84 5.38 30.64 14.18-11.09 6.74-16.51 16.14-16.27 28.2.22 9.57 3.97 17.51 11.25 23.82 7.28 6.31 15.87 10.06 25.77 11.25-2.07 6.42-4.59 13.06-7.57 19.92zM119.22 31.84c0-7.39 2.66-14.46 7.99-21.21 5.33-6.75 12.01-10.63 20.04-11.63.22 1.19.33 2.28.33 3.26 0 7.39-2.77 14.57-8.31 21.54-5.54 6.96-12.34 10.76-20.39 11.41-.11-1.19-.22-2.17-.22-3.37z" />
+        </svg>
+        <span class="apple-header__title">iPhone 18 Duo <span class="apple-badge">New</span></span>
+      </a>
+
+      <nav class="apple-header__nav">
+        <a href="#landing-hero" class="apple-header__link">Overview</a>
+        <a href="#act-hero" class="apple-header__link">Design & Fold</a>
+        <a href="#act-optics" class="apple-header__link">Optics</a>
+        <a href="#act-silicon" class="apple-header__link">A20 Pro</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       ACT 0: Cinematic Video Landing Page Hero
+       Autoplays seamlessly on site load, inspired by Apple's product reveal style
+       ========================================================================= -->
+  <section id="landing-hero" class="landing-hero" data-sc-drift="#050608">
+    <div class="landing-hero__media">
+      <video class="landing-hero__video" autoplay muted playsinline poster="assets/landing-hero-poster.webp">
+        <source src="assets/landing-hero.mp4" type="video/mp4">
+      </video>
+      <div class="landing-hero__vignette"></div>
+      <div class="landing-hero__fade-bottom"></div>
+    </div>
+
+    <div class="landing-hero__content">
+      <div class="landing-hero__eyebrow">iPhone 18 Duo</div>
+      <h1 class="landing-hero__headline">Liquid Titanium.<br>Infinite Horizon.</h1>
+      <p class="landing-hero__subhead">Dual Super Retina XDR displays forged in a zero-compromise folding architecture.</p>
+      
+      <div class="landing-hero__ctas">
+        <a href="#act-hero" class="btn-explore">
+          <span>Scroll to explore</span>
+          <svg class="scroll-arrow-icon" viewBox="0 0 12 12" width="12" height="12">
+            <path d="M6 1v8.5M2.5 6L6 9.5 9.5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ACT 1 & 2: The Monolith & The Unfolding (Hero Scrub Sequence)
+       ========================================================================= -->
+  <section id="act-hero" data-sc-act="scrub" data-sc-span="2.4" data-sc-drift="#050608">
+    <div data-sc-stage class="sc-stage">
+      <img class="sc-stage__poster" src="assets/hero-unfold-poster.webp" alt="iPhone 18 Duo in Dark Studio">
+      <video data-sc-scrub data-sc-src="assets/hero-unfold.mp4" data-sc-src-mobile="assets/hero-unfold-m.mp4" playsinline muted></video>
+      <div class="sc-scrim sc-scrim--band"></div>
+      <div class="sc-stage__fade-bottom"></div>
+
+      <!-- Cue 1: Closed Profile Opening (present immediately on load) -->
+      <div class="sc-copy sc-copy--lead hero-copy" data-sc-cue="0 0.44 0 0.25">
+        <p class="hero-tagline">Pro Innovation</p>
+        <h1 class="hero-heading" data-sc-kinetic="lines">iPhone 18 Duo</h1>
+        <p class="hero-subhead">Two screens. Zero compromise. Folded in liquid titanium.</p>
+      </div>
+
+      <!-- Cue 2: Expansive 180-Degree Unfold Peak (Screen Specs) -->
+      <div class="sc-copy sc-copy--trail hero-specs" data-sc-cue="0.48 0.96 0.18 0.18">
+        <div class="spec-callout">
+          <span class="spec-kicker">Display Architecture</span>
+          <h3 class="spec-title">Dual Tandem OLED</h3>
+          <div class="spec-grid">
+            <div class="spec-stat">
+              <div class="spec-value">8.2″</div>
+              <div class="spec-caption">Unfolded Duo Canvas</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-value">3,000 nits</div>
+              <div class="spec-caption">Peak Outdoor Brightness</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-value">1–120Hz</div>
+              <div class="spec-caption">ProMotion Adaptive</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-value">0.0 mm</div>
+              <div class="spec-caption">Zero-Crease Sapphire Bond</div>
+            </div>
+          </div>
+          <p class="spec-desc">Dual Super Retina XDR displays expand into an unbroken horizon with 460 ppi density, True Tone calibration, and zero optical distortion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ACT 3: Macro Architecture (Optics & Sapphire Lenses)
+       ========================================================================= -->
+  <section id="act-optics" data-sc-act="scrub" data-sc-span="2.2" data-sc-drift="#050608">
+    <div data-sc-stage class="sc-stage">
+      <img class="sc-stage__poster" src="assets/macro-optics-poster.webp" alt="iPhone 18 Duo Camera Module">
+      <video data-sc-scrub data-sc-src="assets/macro-optics.mp4" data-sc-src-mobile="assets/macro-optics-m.mp4" playsinline muted></video>
+      <div class="sc-scrim sc-scrim--band"></div>
+      <div class="sc-stage__fade-top"></div>
+      <div class="sc-stage__fade-bottom"></div>
+
+      <!-- Optics Cue 1 -->
+      <div class="sc-copy sc-copy--lead" data-sc-cue="0.04 0.44 0.18 0.2">
+        <span class="spec-kicker">Pro Optical System</span>
+        <h2 class="sc-display sc-display--lg" data-sc-kinetic="lines">Sapphire Prisms.<br>Quad-Fusion Vision.</h2>
+        <p class="spec-desc" style="margin-top: 14px;">Next-generation periscope architecture reflecting light through precision multi-faceted prisms for lossless 10x optical zoom.</p>
+      </div>
+
+      <!-- Optics Cue 2: Camera Specs -->
+      <div class="sc-copy sc-copy--trail" data-sc-cue="0.48 0.96 0.18 0.18">
+        <div class="spec-callout">
+          <span class="spec-kicker">Optics & Sensor Specifications</span>
+          <h3 class="spec-title">48MP Quad-Prism Camera</h3>
+          <div class="spec-grid">
+            <div class="spec-stat">
+              <div class="spec-value">48MP</div>
+              <div class="spec-caption">Quad-Prism Main Sensor</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-value">10x</div>
+              <div class="spec-caption">Optical Zoom (240mm focal)</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-value">ƒ/1.4</div>
+              <div class="spec-caption">Variable Aperture Iris</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-value">Emerald</div>
+              <div class="spec-caption">Anti-Reflective Coating</div>
+            </div>
+          </div>
+          <p class="spec-desc">Sub-micron concentric ridges cancel stray reflections and chromatic dispersion. 2nd-gen 3D sensor-shift stabilization delivers studio-grade clarity in extreme contrast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ACT 4: Silicon Alchemy (A20 Pro Exploded View)
+       ========================================================================= -->
+  <section id="act-silicon" data-sc-act="scrub" data-sc-span="2.2" data-sc-drift="#050608">
+    <div data-sc-stage class="sc-stage">
+      <img class="sc-stage__poster" src="assets/silicon-exploded-poster.webp" alt="A20 Pro Processor Exploded View">
+      <video data-sc-scrub data-sc-src="assets/silicon-exploded.mp4" data-sc-src-mobile="assets/silicon-exploded-m.mp4" playsinline muted></video>
+      <div class="sc-scrim sc-scrim--band"></div>
+      <div class="sc-stage__fade-top"></div>
+      <div class="sc-stage__fade-bottom"></div>
+
+      <!-- Silicon Cue 1 -->
+      <div class="sc-copy sc-copy--lead" data-sc-cue="0.04 0.44 0.18 0.2">
+        <span class="spec-kicker">Apple Silicon</span>
+        <h2 class="sc-display sc-display--lg" data-sc-kinetic="lines">A20 Pro.<br>The Neural Mastermind.</h2>
+        <p class="spec-desc" style="margin-top: 14px;">Dual-die 3nm+ architecture with 32-core Neural Engine and hardware ray-tracing designed for instantaneous on-device generative AI.</p>
+      </div>
+
+      <!-- Silicon Cue 2: Chip Specs -->
+      <div class="sc-copy sc-copy--trail" data-sc-cue="0.48 0.96 0.18 0.18">
+        <div class="spec-callout">
+          <span class="spec-kicker">Silicon & Compute Architecture</span>
+          <h3 class="spec-title">A20 Pro Architecture</h3>
+          <div class="spec-grid">
+            <div class="spec-stat">
+              <div class="spec-value">3nm+</div>
+              <div class="spec-caption">Dual-Die Architecture</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-value">32 Cores</div>
+              <div class="spec-caption">Neural Engine · 48 TOPS</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-value">6-Core</div>
+              <div class="spec-caption">Hardware Ray-Tracing GPU</div>
+            </div>
+            <div class="spec-stat">
+              <div class="spec-value">Graphene</div>
+              <div class="spec-caption">Liquid Vapor Chamber</div>
+            </div>
+          </div>
+          <p class="spec-desc">Over 28 billion transistors delivering 48 teraflops of neural compute. Integrated vapor chambers channel heat across the titanium frame to sustain peak performance without throttling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ACT 5 / FINALE: Cosmic Landing Page
+       Inspired by 21st.dev responsive-hero-banner with 3D Galaxy View
+       ========================================================================= -->
+  <section id="finale" class="cosmic-finale">
+    <!-- Top feathering gradient for seamless blend with preceding animation -->
+    <div class="cosmic-finale__top-blend"></div>
+
+    <!-- Ambient Cosmic Video Background -->
+    <div class="cosmic-finale__media">
+      <video class="cosmic-finale__video" autoplay loop muted playsinline poster="asset ending page/cosmic-finale-poster.webp">
+        <source src="asset ending page/cosmic-finale.mp4" type="video/mp4" media="(min-width: 861px)">
+        <source src="asset ending page/cosmic-finale-m.mp4" type="video/mp4">
+      </video>
+      <div class="cosmic-finale__scrim"></div>
+      <div class="cosmic-finale__glow"></div>
+    </div>
+
+    <!-- Central Hero Content -->
+    <div class="cosmic-finale__content sc-wrap">
+      <!-- Badge -->
+      <div class="cosmic-badge">
+        <span class="cosmic-badge__pill">iPhone 18 Duo</span>
+        <span class="cosmic-badge__text">The Next Era Begins</span>
+      </div>
+
+      <!-- Main Headline with Instrument Serif inspired editorial scaling -->
+      <h2 class="cosmic-title">
+        Pre-booking starting soon.
+      </h2>
+
+      <!-- Description -->
+      <p class="cosmic-desc">
+        Experience the world's first dual-screen liquid titanium architecture. Powered by the groundbreaking A20 Pro neural engine. Be the first to hold the future.
+      </p>
+
+      <!-- Action Box & Email Priority Registration -->
+      <div class="cosmic-actions">
+        <form id="notifyForm" class="cosmic-notify-form" onsubmit="return false;">
+          <input type="email" id="notifyEmail" class="cosmic-input" placeholder="Enter email for priority drop" required aria-label="Email address">
+          <button type="submit" id="notifyBtn" class="cosmic-btn-primary">
+            Notify Me
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </form>
+        <p id="notifySuccess" class="cosmic-success-msg">✓ You're on the priority list. We will alert you the moment pre-booking opens.</p>
+
+        <div class="cosmic-sub-actions">
+          <button id="calendarBtn" class="cosmic-btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+              <line x1="16" x2="16" y1="2" y2="6"></line>
+              <line x1="8" x2="8" y1="2" y2="6"></line>
+              <line x1="3" x2="21" y1="10" y2="10"></line>
+            </svg>
+            Add Launch to Calendar
+          </button>
+
+          <a href="#act-hero" class="cosmic-btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+            Replay 3D Experience
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apple Global Footer -->
+  <footer class="apple-footer">
+    <div class="sc-wrap">
+      <p>1. iPhone 18 Duo features a seamless folding tandem OLED display tested to over 400,000 continuous fold cycles under controlled laboratory conditions.</p>
+      <p>2. Battery life claim based on video playback comparison with previous generation Pro models. Actual performance varies by network conditions, settings, and use.</p>
+      <p>3. Trade-in values will vary based on the condition, year, and configuration of your eligible trade-in device. Minimum age 18.</p>
+      <div style="border-top: 1px solid var(--sc-hairline); margin-top: 24px; padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <span>Copyright © 2026 Apple Inc. All rights reserved.</span>
+        <span>Privacy Policy · Terms of Use · Sales and Refunds · Legal · Site Map</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="engine/scrollcraft.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

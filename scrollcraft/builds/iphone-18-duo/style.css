@@ -1,0 +1,811 @@
+/* ==========================================================================
+   iPhone 18 Duo - Apple Masterpiece Stylesheet
+   Powered by scrollcraft runtime
+   ========================================================================== */
+
+@import url("./engine/scrollcraft.css");
+
+:root {
+  /* Apple Precision Dark Tokens */
+  --sc-canvas: #050608;
+  --sc-surface: #0d0f14;
+  --sc-surface-raised: #151821;
+  --sc-ink: #f5f5f7;
+  --sc-ink-soft: #86868b;
+  --sc-accent: #2997ff;
+  --sc-accent-ink: #ffffff;
+  --sc-accent-amber: #f5a623;
+  --sc-accent-purple: #af52de;
+  --sc-hairline: rgba(255, 255, 255, 0.08);
+  --sc-hairline-strong: rgba(255, 255, 255, 0.16);
+
+  --apple-font: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+  --sc-font-display: var(--apple-font);
+  --sc-font-text: var(--apple-font);
+  --sc-font-mono: "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --nav-height: 52px;
+}
+
+body {
+  background-color: var(--sc-canvas);
+  color: var(--sc-ink);
+  font-family: var(--apple-font);
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ----------------------------------------------------------- Global Header -- */
+.apple-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 999;
+  background: linear-gradient(to bottom, rgba(5, 6, 8, 0.85) 0%, rgba(5, 6, 8, 0.3) 70%, transparent 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: none;
+  transition: background 300ms ease;
+}
+
+.apple-header__inner {
+  max-width: 1120px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apple-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: opacity 200ms ease;
+}
+
+.apple-header__brand:hover {
+  opacity: 0.8;
+}
+
+.apple-header__logo {
+  width: 15px;
+  height: 18px;
+  fill: #ffffff;
+}
+
+.apple-header__title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+.apple-badge {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  border: none !important;
+}
+
+.apple-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.apple-header__link {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+  transition: color 200ms ease;
+}
+
+.apple-header__link:hover {
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------- Landing Hero (Act 0) -- */
+.landing-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050608;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.landing-hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.landing-hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: translateZ(0);
+  will-change: transform;
+  filter: brightness(0.92) contrast(1.04);
+}
+
+.landing-hero__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(5, 6, 8, 0.1) 0%, rgba(5, 6, 8, 0.45) 60%, rgba(5, 6, 8, 0.88) 100%);
+  pointer-events: none;
+}
+
+.landing-hero__fade-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 38vh;
+  background: linear-gradient(180deg, rgba(5, 6, 8, 0) 0%, rgba(5, 6, 8, 0.65) 60%, #050608 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.landing-hero__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-hero__eyebrow {
+  font-size: clamp(0.9rem, 0.8rem + 0.4vw, 1.2rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+.landing-hero__headline {
+  font-size: clamp(3rem, 2.2rem + 5vw, 6.2rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 0 0 20px 0;
+  background: linear-gradient(180deg, #ffffff 30%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.7));
+}
+
+.landing-hero__subhead {
+  font-size: clamp(1.05rem, 0.95rem + 0.6vw, 1.5rem);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 48ch;
+  margin: 0 0 36px 0;
+  letter-spacing: -0.015em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+}
+
+.landing-hero__ctas {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 980px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: all 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.btn-explore:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65);
+}
+
+.scroll-arrow-icon {
+  animation: bounceSlow 2s ease-in-out infinite;
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* ---------------------------------------------------- Hero Stage Tweaks -- */
+.hero-copy {
+  max-width: 58rem;
+  z-index: 10;
+}
+
+.hero-tagline {
+  font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1.1rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-heading {
+  font-size: clamp(2.8rem, 2rem + 5vw, 6rem);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px 0;
+  background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.65) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subhead {
+  font-size: clamp(1.1rem, 0.95rem + 0.8vw, 1.8rem);
+  line-height: 1.35;
+  color: var(--sc-ink-soft);
+  max-width: 44ch;
+  letter-spacing: -0.02em;
+}
+
+/* ------------------------------------------- Minimalist Floating Specs -- */
+/* Strictly NO card blocks, backgrounds, borders, or boxes */
+.spec-callout {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  max-width: 480px;
+  text-align: left;
+  margin-left: auto;
+  pointer-events: none;
+}
+
+.hero-specs {
+  bottom: clamp(6.5rem, 16vh, 12rem);
+}
+
+.spec-kicker {
+  display: block;
+  font-family: var(--apple-font);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 6px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.spec-title {
+  font-family: var(--apple-font);
+  font-size: clamp(1.8rem, 2.4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.9);
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(130px, 1fr));
+  gap: 16px 24px;
+  margin-bottom: 16px;
+}
+
+.spec-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.spec-value {
+  font-family: var(--apple-font);
+  font-size: clamp(1.4rem, 1.8vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
+}
+
+.spec-caption {
+  font-family: var(--apple-font);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+}
+
+.spec-desc {
+  font-family: var(--apple-font);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 44ch;
+  text-wrap: pretty;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+/* Fallback cleanup in case old classes exist anywhere */
+.tech-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 860px) {
+  .spec-callout {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .hero-specs {
+    bottom: clamp(4rem, 12vh, 8rem);
+  }
+  .spec-grid {
+    gap: 12px 16px;
+  }
+}
+
+/* ----------------------------------- Seamless Atmospheric Act Blends -- */
+html {
+  scroll-behavior: auto !important;
+}
+
+.sc-stage {
+  background: #050608 !important;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.sc-stage video[data-sc-scrub],
+.sc-stage .sc-stage__poster {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+  /* Feather the top and bottom video frames into deep obsidian void */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+/* Act 1 starts at the top, so no top mask on the first video */
+#act-hero video[data-sc-scrub],
+#act-hero .sc-stage__poster {
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 85%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.sc-stage__fade-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40vh;
+  min-height: 260px;
+  background: linear-gradient(
+    to bottom,
+    #050608 0%,
+    rgba(5, 6, 8, 0.98) 18%,
+    rgba(5, 6, 8, 0.75) 45%,
+    rgba(5, 6, 8, 0.25) 78%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sc-stage__fade-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40vh;
+  min-height: 260px;
+  background: linear-gradient(
+    to top,
+    #050608 0%,
+    rgba(5, 6, 8, 0.98) 18%,
+    rgba(5, 6, 8, 0.75) 45%,
+    rgba(5, 6, 8, 0.25) 78%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ==========================================================================
+   ACT 5 / FINALE: Cosmic Landing Page
+   ========================================================================== */
+.cosmic-finale {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sc-canvas);
+  overflow: hidden;
+  isolation: isolate;
+  /* Seamless overlap pulling the landing page into the silicon stage */
+  margin-top: -15vh;
+  padding-top: 15vh;
+}
+
+.cosmic-finale__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  /* Soft feathered top mask so cosmic dust and stars emerge gradually from the void */
+  mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    transparent 12%,
+    rgba(0, 0, 0, 0.25) 30%,
+    rgba(0, 0, 0, 0.75) 52%,
+    #000000 70%
+  );
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    transparent 12%,
+    rgba(0, 0, 0, 0.25) 30%,
+    rgba(0, 0, 0, 0.75) 52%,
+    #000000 70%
+  );
+}
+
+.cosmic-finale__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cosmic-finale__top-blend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55vh;
+  min-height: 350px;
+  background: linear-gradient(to bottom,
+    #050608 0%,
+    rgba(5, 6, 8, 0.98) 18%,
+    rgba(5, 6, 8, 0.8) 45%,
+    rgba(5, 6, 8, 0.3) 78%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cosmic-finale__scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(5, 6, 8, 0.25) 0%,
+    rgba(5, 6, 8, 0.75) 60%,
+    rgba(5, 6, 8, 0.98) 100%
+  );
+}
+
+.cosmic-finale__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(41, 151, 255, 0.08) 0%, transparent 80%);
+}
+
+.cosmic-finale__content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 1.5rem;
+  max-width: 860px;
+}
+
+.cosmic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 5px 14px 5px 6px;
+  border-radius: 999px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: cosmicFadeIn 0.8s var(--sc-ease-out);
+}
+
+.cosmic-badge__pill {
+  background: #ffffff;
+  color: #09090b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: -0.01em;
+}
+
+.cosmic-badge__text {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: -0.01em;
+}
+
+.cosmic-title {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(3rem, 2.2rem + 4.8vw, 6.4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  text-wrap: balance;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  animation: cosmicFadeIn 0.9s var(--sc-ease-out);
+}
+
+.cosmic-desc {
+  font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.35rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 600px;
+  margin: 0 auto 36px auto;
+  text-wrap: pretty;
+  animation: cosmicFadeIn 1s var(--sc-ease-out);
+}
+
+.cosmic-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  animation: cosmicFadeIn 1.1s var(--sc-ease-out);
+}
+
+.cosmic-notify-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 999px;
+  padding: 6px 6px 6px 20px;
+  width: min(460px, 92vw);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.cosmic-notify-form:focus-within {
+  border-color: rgba(41, 151, 255, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(41, 151, 255, 0.25);
+}
+
+.cosmic-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  font-family: var(--apple-font);
+}
+
+.cosmic-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.cosmic-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #09090b;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  white-space: nowrap;
+}
+
+.cosmic-btn-primary:hover {
+  background: #f0f0f2;
+  transform: scale(1.02);
+}
+
+.cosmic-success-msg {
+  display: none;
+  color: #30d158;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.cosmic-success-msg.visible {
+  display: block;
+}
+
+.cosmic-sub-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cosmic-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 200ms ease;
+}
+
+.cosmic-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes cosmicFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------------- Footer -- */
+.apple-footer {
+  background: #000000;
+  border-top: 1px solid var(--sc-hairline);
+  padding: 56px 0 72px 0;
+  font-size: 12px;
+  color: #6e6e73;
+}
+
+.apple-footer p {
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------- Responsive Rules -- */
+@media (max-width: 860px) {
+  .apple-header__nav {
+    display: none;
+  }
+  .hero-copy {
+    bottom: clamp(1.5rem, 6vh, 4rem);
+    left: var(--sc-gutter);
+    right: var(--sc-gutter);
+  }
+  .tech-card {
+    max-width: 100%;
+  }
+  .cosmic-notify-form {
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 20px;
+  }
+  .cosmic-input {
+    text-align: center;
+    padding: 8px 0;
+  }
+  .cosmic-btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
