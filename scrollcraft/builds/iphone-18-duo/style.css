@@ -832,6 +832,19 @@ html {
     -webkit-tap-highlight-color: transparent;
   }
 
+  /* Full horizontal visibility for 3D scrub videos and posters on mobile (No horizontal cropping) */
+  .sc-stage :is(video[data-sc-scrub], canvas[data-sc-sequence], .sc-stage__poster) {
+    object-fit: contain !important;
+    object-position: center 32% !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .landing-hero__video {
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
   /* Lead Copy on Scrub acts */
   .sc-copy--lead {
     bottom: clamp(1.5rem, 6vh, 4rem);
