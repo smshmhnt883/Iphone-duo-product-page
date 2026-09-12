@@ -76,11 +76,32 @@
     });
   });
 
-  // 4. Landing Hero Video: Play once, hold final frame constantly
+  // 4. Landing Hero Video: Play once, hold final frame constantly + Mobile Autoplay Resilience
   const landingVideo = document.querySelector('.landing-hero__video');
   if (landingVideo) {
     landingVideo.addEventListener('ended', function () {
       landingVideo.pause();
+    });
+
+    // Mobile fallback: In iOS Low-Power Mode or mobile battery saver, autoplay can be prevented.
+    // Ensure playback kicks off on the first user touch or scroll interaction.
+    const startOnInteraction = function () {
+      if (landingVideo.paused && !landingVideo.ended) {
+        landingVideo.play().catch(function () {});
+      }
+    };
+    window.addEventListener('touchstart', startOnInteraction, { passive: true, once: true });
+    window.addEventListener('scroll', startOnInteraction, { passive: true, once: true });
+  }
+
+  // Handle "Replay 3D Experience" button to rewind and replay intro video
+  const replayBtn = document.querySelector('.cosmic-btn-secondary[href="#landing-hero"]');
+  if (replayBtn && landingVideo) {
+    replayBtn.addEventListener('click', function () {
+      setTimeout(function () {
+        landingVideo.currentTime = 0;
+        landingVideo.play().catch(function () {});
+      }, 350);
     });
   }
 
