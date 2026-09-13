@@ -987,6 +987,186 @@ html {
   to { transform: rotate(360deg); }
 }
 
+/* Navigation Chevrons */
+.interactive-3d__nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(26, 28, 36, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.interactive-3d__nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.interactive-3d__nav-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.interactive-3d__nav-btn.prev {
+  left: 20px;
+}
+
+.interactive-3d__nav-btn.next {
+  right: 20px;
+}
+
+/* 3-Color Swatch & Horizontal Scroll Bar */
+.interactive-3d__color-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 520px;
+  margin-top: 24px;
+  padding: 0 20px;
+}
+
+.interactive-3d__swatches {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color-swatch-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(26, 28, 36, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #a1a1a6;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.color-swatch-pill:hover {
+  color: #f5f5f7;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.color-swatch-pill.is-active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+}
+
+.color-dot.cosmic {
+  background: linear-gradient(135deg, #5c6370 0%, #22252c 100%);
+  border: 1px solid #7c8594;
+}
+
+.color-dot.bronze {
+  background: linear-gradient(135deg, #b07d5e 0%, #4a2e20 100%);
+  border: 1px solid #d49874;
+}
+
+.color-dot.gold {
+  background: linear-gradient(135deg, #d4be88 0%, #63532c 100%);
+  border: 1px solid #fae29f;
+}
+
+/* Horizontal Scrollbar Track */
+.interactive-3d__scrollbar-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.interactive-3d__scrollbar-track {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: rgba(36, 40, 52, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 2px;
+  user-select: none;
+  touch-action: none;
+}
+
+.interactive-3d__scrollbar-notches {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.scrollbar-notch {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.interactive-3d__scrollbar-thumb {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 44px;
+  height: calc(100% - 4px);
+  background: linear-gradient(135deg, #ffffff 0%, #c4cbd8 100%);
+  border-radius: 999px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: grab;
+}
+
+.interactive-3d__scrollbar-thumb:active {
+  cursor: grabbing;
+  background: #ffffff;
+}
+
+.interactive-3d__scrollbar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #86868b;
+  padding: 0 4px;
+  letter-spacing: 0.02em;
+}
+
 /* ---------------------------------------------------------------- Footer -- */
 .apple-footer {
   background: #000000;
@@ -1195,6 +1375,35 @@ html {
     padding: 6px 14px;
     font-size: 11px;
   }
+
+  .interactive-3d__nav-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .interactive-3d__nav-btn.prev {
+    left: 8px;
+  }
+
+  .interactive-3d__nav-btn.next {
+    right: 8px;
+  }
+
+  .interactive-3d__color-bar {
+    gap: 12px;
+    padding: 0 16px;
+    margin-top: 18px;
+  }
+
+  .color-swatch-pill {
+    padding: 6px 12px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .interactive-3d__scrollbar-labels {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1209,5 +1418,11 @@ html {
   }
   .interactive-3d__viewport {
     height: 400px;
+  }
+  .color-swatch-pill {
+    padding: 5px 10px;
+  }
+  .color-swatch-pill span.color-name {
+    font-size: 10px;
   }
 }
