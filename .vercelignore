@@ -1,4 +1,5 @@
-﻿meshymodel/
-.git/
-.vscode/
+meshymodel
+meshymodel/**
+.git
+.vscode
 *.tmp
