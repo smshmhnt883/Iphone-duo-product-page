@@ -771,6 +771,170 @@ html {
     transform: translateY(0);
   }
 }
+/* =========================================================================
+   ACT 4.5: Interactive 3D Studio
+   ========================================================================= */
+.interactive-3d-section {
+  position: relative;
+  background: #050608;
+  color: #f5f5f7;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.interactive-3d__top-blend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, #050608 0%, rgba(5, 6, 8, 0) 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.interactive-3d__bottom-blend {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, #050608 0%, rgba(5, 6, 8, 0) 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.interactive-3d__inner {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.interactive-3d__header {
+  max-width: 680px;
+  margin-bottom: 24px;
+  padding: 0 20px;
+}
+
+.interactive-3d__header .spec-kicker {
+  color: #86868b;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.interactive-3d__header .sc-display {
+  font-size: clamp(2.4rem, 1.8rem + 2.5vw, 3.8rem);
+  line-height: 1.08;
+  color: #f5f5f7;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+}
+
+.interactive-3d__header .spec-desc {
+  color: #a1a1a6;
+  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.15rem);
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+.interactive-3d__viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: clamp(480px, 65vh, 720px);
+  margin: 0 auto;
+  border-radius: 28px;
+  background: radial-gradient(circle at 50% 48%, rgba(40, 55, 80, 0.15) 0%, rgba(5, 6, 8, 0) 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.interactive-3d__viewport:active {
+  cursor: grabbing;
+}
+
+#interactive3dCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: none;
+}
+
+.interactive-3d__hint {
+  position: absolute;
+  bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(20, 22, 28, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(245, 245, 247, 0.85);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  pointer-events: none;
+  transition: opacity 300ms ease;
+  z-index: 15;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.interactive-3d__hint .interactive-3d__icon {
+  animation: spinSlow 12s linear infinite;
+  color: #60a5fa;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.interactive-3d__loader {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: #86868b;
+  font-size: 13px;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #f5f5f7;
+  border-radius: 50%;
+  animation: spinSpinner 0.8s linear infinite;
+}
+
+@keyframes spinSpinner {
+  to { transform: rotate(360deg); }
+}
 
 /* ---------------------------------------------------------------- Footer -- */
 .apple-footer {
@@ -943,6 +1107,30 @@ html {
     font-size: 13px;
     padding: 10px 20px;
   }
+
+  /* Interactive 3D Studio Mobile Optimization */
+  .interactive-3d-section {
+    padding: 56px 0;
+    min-height: auto;
+  }
+
+  .interactive-3d__header {
+    margin-bottom: 20px;
+    padding: 0 16px;
+  }
+
+  .interactive-3d__viewport {
+    height: clamp(380px, 56vh, 500px);
+    border-radius: 20px;
+    width: calc(100% - 24px);
+    margin: 0 auto;
+  }
+
+  .interactive-3d__hint {
+    bottom: 16px;
+    padding: 6px 14px;
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -954,5 +1142,8 @@ html {
   }
   .spec-desc {
     font-size: 11.5px;
+  }
+  .interactive-3d__viewport {
+    height: 400px;
   }
 }

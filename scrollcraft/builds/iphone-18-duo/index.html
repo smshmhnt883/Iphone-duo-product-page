@@ -27,6 +27,7 @@
         <a href="#act-hero" class="apple-header__link">Design & Fold</a>
         <a href="#act-optics" class="apple-header__link">Optics</a>
         <a href="#act-silicon" class="apple-header__link">A20 Pro</a>
+        <a href="#act-interactive" class="apple-header__link">3D Studio</a>
       </nav>
     </div>
   </header>
@@ -201,6 +202,38 @@
   </section>
 
   <!-- =========================================================================
+       ACT 4.5: Interactive 3D Studio & Liquid Titanium Inspection
+       Real-time 360° inspection with natural breathing levitation loop
+       ========================================================================= -->
+  <section id="act-interactive" class="interactive-3d-section" data-sc-drift="#050608">
+    <div class="interactive-3d__top-blend"></div>
+
+    <div class="interactive-3d__inner sc-wrap">
+      <div class="interactive-3d__header">
+        <span class="spec-kicker">3D Interactive Studio</span>
+        <h2 class="sc-display sc-display--lg">Hold the Horizon.</h2>
+        <p class="spec-desc">Drag to inspect liquid titanium bevels, dual tandem OLED curvature, and micro-precision hinge mechanics in real-time 3D.</p>
+      </div>
+
+      <div class="interactive-3d__viewport" id="interactive3dViewport">
+        <canvas id="interactive3dCanvas"></canvas>
+        <div class="interactive-3d__hint">
+          <svg class="interactive-3d__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+          </svg>
+          <span>Drag to rotate 360° · Hover to tilt</span>
+        </div>
+        <div class="interactive-3d__loader" id="interactive3dLoader">
+          <div class="loader-spinner"></div>
+          <span>Loading 3D Experience...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="interactive-3d__bottom-blend"></div>
+  </section>
+
+  <!-- =========================================================================
        ACT 5 / FINALE: Cosmic Landing Page
        Inspired by 21st.dev responsive-hero-banner with 3D Galaxy View
        ========================================================================= -->
@@ -286,7 +319,16 @@
   </footer>
 
   <!-- Scripts -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
   <script src="engine/scrollcraft.js"></script>
   <script src="app.js"></script>
+  <script type="module" src="interactive-3d.js"></script>
 </body>
 </html>
